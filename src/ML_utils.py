@@ -38,4 +38,4 @@ def parametrization_state_ML(t):
         incr = 2*(2**n-i)
         matrix += sy.sparse.diags(t[count:count+incr:2], -i)+1j*sy.sparse.diags(t[count+1:count+incr+1:2], -i)
         count += incr
-    return matrix
+    return matrix.conjugate().T@matrix

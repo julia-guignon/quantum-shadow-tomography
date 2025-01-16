@@ -89,7 +89,7 @@ def measurement_process(n, nshots, noise, simulator, verbose):
             expectation_values[pauli_strs[i]] = get_expectation_value(results[done.index(tmp_str)], pauli_strs[i])
             measurements[pauli_strs[i]] = results[done.index(tmp_str)]
         else:  
-            tmp_results = single_measurement(n, tmp_str, nshots, simulator)
+            tmp_results = single_measurement_pauli(n, tmp_str, nshots, simulator)
             expectation_values[pauli_strs[i]] = get_expectation_value(tmp_results, pauli_strs[i])
             done.append(tmp_str)
             results.append(tmp_results)
@@ -97,10 +97,23 @@ def measurement_process(n, nshots, noise, simulator, verbose):
     
     return expectation_values, measurements
 
-def single_measurement(n, pauli_str, nshots, simulator):
+def single_measurement_pauli(n, pauli_str, nshots, simulator):
     circuit = init_GHZ(n)
     measurement_in_some_basis(circuit, pauli_str)
     counts = run_circuit(simulator, circuit, nshots).get_counts()
     return counts
 
-   
+
+def single_measurement_clifford(n, op, nshots, simulator):
+    circuit = init_GHZ(n)
+    measurement_in_clifford_basis(circuit, op)
+    counts = run_circuit(simulator, circuit, nshots).get_counts()#, method="stabilizer")
+    return counts
+
+
+def measurement_in_clifford_basis(circuit, clifford_op):
+    gate = clifford_op.to_circuit()
+
+    circuit.compose(gate, inplace=True)
+
+    circuit.measure_all(add_bits=False)

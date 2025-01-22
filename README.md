@@ -11,5 +11,5 @@ References:
 - Nielsen and Chuang, Quantum computation and quantum information
 
 Credits:
-- a big thanks to Pr. Savona that proposed this mini-project for the exam of his lecture "Quantum Computing" at EPFL
+- a big thanks to Professor Savona who proposed this mini-project for the exam of his lecture "Quantum Computing" at EPFL
 - Giovanni Bragadin who showed me the existence of the stabilizer formalism implementation in qiskit

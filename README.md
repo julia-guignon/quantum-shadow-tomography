@@ -1,6 +1,6 @@
 # Quantum tomography and classical shadows
 
-I realised this code for the mini-project I had to present for my exam in Quantum Computing at EPFL. I spent roughly 50 hours on it (including the preparation of my slides and presentation) and my computer ran for at least 40 hours to create the data.
+I realised this code for the mini-project I had to present for my exam in Quantum Computing at EPFL. I spent roughly 50 hours on it (including the preparation of my slides and presentation) and my computer ran for at least 40 hours to perform the measurements.
 
 References:
 - Huang, HY., Kueng, R. & Preskill, J. Predicting many properties of a quantum system from very few measurements. Nat. Phys. 16, 1050–1057 (2020). https://doi.org/10.1038/s41567-020-0932-7
